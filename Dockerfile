@@ -20,9 +20,10 @@ COPY app.py .
 
 # Make sure scripts in .local are usable
 ENV PATH=/root/.local/bin:$PATH
+ENV FLASK_APP=app.py
 
 # Expose port
 EXPOSE 5000
 
 # Run the application
-CMD ["python", "-m", "flask", "run", "--host=0.0.0.0", "--port=5000"]
+CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]
